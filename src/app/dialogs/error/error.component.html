@@ -1,0 +1,11 @@
+<h1 matDialogTitle class="text-danger text-center">Error !</h1>
+
+<mat-dialog-content class="mb-2 text-center" style="white-space: pre-wrap;text-overflow: ellipsis;">
+  {{data.error}}
+</mat-dialog-content>
+
+<mat-dialog-actions class="d-flex flex-row align-items-center justify-content-center mb-1">
+  <!-- <button mat-raised-button class="mr-3" (click)="clear()" color="primary">Clear</button> -->
+  <button mat-raised-button (click)="continue()" color="accent">Continue</button>
+
+</mat-dialog-actions>

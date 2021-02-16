@@ -1,0 +1,17 @@
+.active-link {
+  background: #e1f5fe !important;
+  color: #0288d1;
+  outline: none;
+}
+
+.sidenav-width {
+  min-width: 9em;
+}
+
+button {
+  outline: none; // this one
+}
+
+mat-list-item {
+  outline: none;
+}

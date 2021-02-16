@@ -1,0 +1,52 @@
+<h1 matDialogTitle class="mat-subheading-1 font-weight-bold">{{ data ? 'Edit' : 'Create'}} Room</h1>
+
+<mat-dialog-content>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <form class="example-full-width" [formGroup]="roomForm">
+                    <div *ngIf="!data">
+                        <div class="mat-body-2">Name</div>
+                        <mat-form-field class="example-full-width" floatLabel="never">
+                            <mat-label>Write Room Name</mat-label>
+                            <input matInput formControlName="name">
+                        </mat-form-field>
+                    </div>
+
+                    <div *ngIf="!data">
+                        <div class="mat-body-2">Booking Email</div>
+                        <mat-form-field class="example-full-width" floatLabel="never">
+                            <mat-label>Write Booking Email</mat-label>
+                            <input matInput formControlName="booking_email">
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf="!data">
+                        <div class="mat-body-2">Occupancy</div>
+                        <mat-form-field class="example-full-width" floatLabel="never">
+                            <mat-label>Write Occupancy</mat-label>
+                            <input matInput formControlName="sitting">
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf="data">
+                        <div class="mat-body-2">Availability</div>
+                        <mat-form-field class="example-full-width" floatLabel="never">
+                            <mat-label>Availability Status</mat-label>
+                            <mat-select matInput formControlName="current_status">
+                                <mat-option value="Available">Available</mat-option>
+                                <mat-option value="Booked">Booked</mat-option>
+                              </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions class="d-flex flex-row align-items-center justify-content-end">
+    <button mat-raised-button matDialogClose color="primary">Cancel</button>
+    <button mat-raised-button color="accent" [disabled]="!roomForm.valid" (click)="createAdmin()">{{ data ? 'Edit' :
+        'Create'}} User</button>
+
+</mat-dialog-actions>

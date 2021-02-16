@@ -1,0 +1,1 @@
+export const API_URL = 'http://jkarthikd4.pythonanywhere.com/';

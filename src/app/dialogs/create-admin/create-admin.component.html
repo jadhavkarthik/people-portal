@@ -1,0 +1,77 @@
+<h1 matDialogTitle class="mat-subheading-1 font-weight-bold">{{ data ? 'Edit' : 'Create'}} User</h1>
+
+<mat-dialog-content>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <form class="example-full-width" [formGroup]="adminForm">
+                    <div>
+                        <div class="mat-body-2">Name</div>
+                        <mat-form-field class="example-full-width" floatLabel="never">
+                            <mat-label>Write Employee Name</mat-label>
+                            <input matInput formControlName="name">
+                        </mat-form-field>
+                    </div>
+
+                    <div>
+                        <div class="mat-body-2">Email ID</div>
+                        <mat-form-field class="example-full-width" floatLabel="never">
+                            <mat-label>Write Email ID</mat-label>
+                            <input matInput formControlName="email">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <div class="mat-body-2">Role</div>
+                        <mat-form-field class="example-full-width" floatLabel="never">
+                            <mat-label>Write Employee Role</mat-label>
+                            <mat-select matInput formControlName="role">
+                                <mat-option value=4>Default</mat-option>
+                                <mat-option value=1>Admin</mat-option>
+                                <mat-option value=2>Engg Manager</mat-option>
+                                <mat-option value=3>Office Manager</mat-option>
+                              </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <div class="mat-body-2">Position</div>
+                        <mat-form-field class="example-full-width" floatLabel="never">
+                            <mat-label>Write Employee Position</mat-label>
+                            <input matInput formControlName="position">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <div class="mat-body-2">Team</div>
+                        <mat-form-field class="example-full-width" floatLabel="never">
+                            <mat-label>Write Employee Team</mat-label>
+                            <input matInput formControlName="team">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <div class="mat-body-2">Phone No</div>
+                        <mat-form-field class="example-full-width" floatLabel="never">
+                            <mat-label>Write Employee Phone NO</mat-label>
+                            <input matInput formControlName="phone_no">
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf="!data">
+                        <div class="mat-body-2">Password</div>
+                        <mat-form-field class="example-full-width" floatLabel="never">
+                            <mat-label>Write Password</mat-label>
+                            <input matInput formControlName="password">
+                        </mat-form-field>
+                    </div>
+
+                </form>
+
+                <!-- <p>{{adminForm.value | json}}</p> -->
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions class="d-flex flex-row align-items-center justify-content-end">
+    <button mat-raised-button matDialogClose color="primary">Cancel</button>
+    <button mat-raised-button color="accent" [disabled]="!adminForm.valid" (click)="createAdmin()">{{ data ? 'Edit' :
+        'Create'}} User</button>
+
+</mat-dialog-actions>
