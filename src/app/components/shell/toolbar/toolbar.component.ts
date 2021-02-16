@@ -50,9 +50,9 @@ export class ToolbarComponent implements OnInit, OnDestroy {
         finalize(() => this.dialog.closeAll())
       )
       .subscribe(
-        (res: ILogoutReponse) => {
+        (res: any) => {
           this.dialog.closeAll();
-          this.snack.open(res.result.message, 'Close', {
+          this.snack.open(res.message, 'Close', {
             duration: 3000
           });
           this.router.navigate(['/login']);
